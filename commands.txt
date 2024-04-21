@@ -1,0 +1,5 @@
+$mql_path="~/AppData\Roaming\MetaQuotes\Terminal"
+cd $mql_path
+ls -Recurse -Force -Include *log*.csv , EXTRA*.html | cp -Destination 'D:\User\asbasit\test\'
+
+Date format: $file = Get-Date -Format 'yyyyMMdd'
