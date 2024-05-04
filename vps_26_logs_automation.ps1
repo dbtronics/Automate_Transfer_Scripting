@@ -1,4 +1,4 @@
-$computer_id = "VP_26"
+$computer_id = "VPS_26"
 
 $mql_path="~/AppData\Roaming\MetaQuotes\Terminal"
 
