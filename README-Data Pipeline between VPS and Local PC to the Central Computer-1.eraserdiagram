@@ -1,0 +1,41 @@
+cloud-architecture-diagram
+
+title Data Pipeline between VPS and Local PC to the Central Computer
+
+// VPS Servers where NextCloud and PowerShell scripts are installed
+VPS Servers [color: lightblue] {
+   NextCloud VPS1 [icon: server]
+   PowerShell VPS1 [icon: terminal]
+   NextCloud VPS2 [icon: server]
+   PowerShell VPS2 [icon: terminal]
+   NextCloud Local PC [icon: server]
+   PowerShell Local PC [icon: terminal]
+   CSV HTML VPS1 [icon: layers]
+   CSV HTML VPS2 [icon: layers]
+   CSV HTML Local PC [icon: layers]
+}
+
+// Main computer where files are aggregated and further processed
+Main Computer [color: lightgreen] {
+   Local NextCloud [icon: computer]
+   Local PowerShell [icon: terminal]
+   Dropbox [icon: dropbox]
+   CSV HTML Batch [icon: layers]
+}
+
+// PowerShell scripts process and move .csv and .html files to their respective NextCloud instances
+// VPS Servers: PowerShell VPS1, PowerShell VPS2, PowerShell VPS3
+PowerShell VPS1 > CSV HTML VPS1 > NextCloud VPS1
+PowerShell VPS2 > CSV HTML VPS2 > NextCloud VPS2
+PowerShell Local PC > CSV HTML Local PC > NextCloud Local PC
+
+// Connections from VPS Servers to Main Computer
+NextCloud VPS1 > Local NextCloud
+NextCloud VPS2 > Local NextCloud
+NextCloud Local PC > Local NextCloud
+
+// Local PowerShell processes files from Local NextCloud and moves .csv and .html files to Dropbox
+// Main Computer: Local PowerShell, Local NextCloud
+Local PowerShell > Local NextCloud
+Local NextCloud > CSV HTML Batch > Dropbox
+
