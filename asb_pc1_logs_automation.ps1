@@ -12,5 +12,5 @@ if (-not (Test-Path "$nextcloud_path\Trading_Weekly_logs\$computer_id\$log_folde
         mkdir "$nextcloud_path\Trading_Weekly_logs\$computer_id\$log_folder"
 }
 
-ls -Recurse -Force "$mql_path\*log*.csv" | mv -Destination "$nextcloud_path\Trading_Weekly_logs\$log_folder\$computer_id"
-ls -Recurse -Force "$mql_path\EXTRA*.html" | mv -Destination "$nextcloud_path\Trading_Weekly_logs\$log_folder\$computer_id"
+ls -Recurse -Force "$mql_path\*log*.csv" | mv -Destination "$nextcloud_path\Trading_Weekly_logs\$computer_id\$log_folder"
+ls -Recurse -Force "$mql_path\EXTRA*.html" | mv -Destination "$nextcloud_path\Trading_Weekly_logs\$computer_id\$log_folder"
